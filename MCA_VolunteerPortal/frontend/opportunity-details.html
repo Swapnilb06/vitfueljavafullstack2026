@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opportunity Details | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Detail hero -->
+        <section class="detail-hero">
+
+            <div class="container">
+
+                <a
+                    href="opportunities.html"
+                    class="back-link">
+
+                    <span aria-hidden="true">←</span>
+                    Back to opportunities
+
+                </a>
+
+                <div
+                    id="opportunity-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading opportunity...
+                    </p>
+
+                </div>
+
+                <div
+                    id="opportunity-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load opportunity
+                        </h3>
+
+                        <p id="opportunity-error-message">
+                            We couldn't retrieve this opportunity.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-primary">
+
+                            View opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="opportunity-content"
+                    class="detail-layout"
+                    hidden>
+
+                    <!-- Main information -->
+                    <div class="detail-main">
+
+                        <div class="detail-heading">
+
+                            <p
+                                id="opportunity-category"
+                                class="eyebrow">
+                                Volunteer opportunity
+                            </p>
+
+                            <h1 id="opportunity-title">
+                                Opportunity title
+                            </h1>
+
+                            <p
+                                id="opportunity-organization"
+                                class="detail-organization">
+                            </p>
+                        <p id="opportunity-description-short" class="large-copy"></p>
+
+                        </div>
+
+                        <div class="detail-description">
+
+                            <p class="detail-label">
+                                About the opportunity
+                            </p>
+
+                            <div id="opportunity-description">
+                            </div>
+
+                        </div>
+
+                        <div class="detail-information">
+
+                            <div class="detail-information-item">
+
+                                <span class="detail-information-label">
+                                    Location
+                                </span>
+
+                                <strong id="opportunity-location">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="detail-information-item">
+
+                                <span class="detail-information-label">
+                                    Start date
+                                </span>
+
+                                <strong id="opportunity-start-date">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="detail-information-item">
+
+                                <span class="detail-information-label">
+                                    End date
+                                </span>
+
+                                <strong id="opportunity-end-date">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="detail-information-item">
+
+                                <span class="detail-information-label">
+                                    Volunteers needed
+                                </span>
+
+                                <strong id="opportunity-volunteers">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Application panel -->
+                    <aside class="detail-sidebar">
+
+                        <div class="detail-action-card">
+
+                            <div class="detail-action-header">
+
+                                <span class="detail-label">
+                                    Participation
+                                </span>
+
+                                <span
+                                    id="opportunity-status"
+                                    class="status-badge">
+                                    —
+                                </span>
+
+                            </div>
+
+                            <h2>
+                                Ready to contribute?
+                            </h2>
+
+                            <p>
+                                Apply for this opportunity and
+                                become part of the organization’s
+                                volunteer team.
+                            </p>
+
+                            <div
+                                id="opportunity-apply-message"
+                                class="form-message"
+                                hidden>
+                            </div>
+
+                            <div id="application-action">
+
+                                <button
+                                    type="button"
+                                    id="apply-opportunity-button"
+                                    class="btn btn-primary btn-block">
+
+                                    Apply for opportunity
+
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="login-to-apply-link"
+                                class="detail-login-message"
+                                hidden>
+
+                                <p>
+                                    Sign in as a volunteer to apply
+                                    for this opportunity.
+                                </p>
+
+                                <a
+                                    href="login.html"
+                                    class="btn btn-secondary btn-block">
+
+                                    Sign in
+
+                                </a>
+
+                            </div>
+
+                            <div
+                                id="already-applied-message"
+                                class="detail-applied-message"
+                                hidden>
+
+                                <span class="status-badge status-pending">
+                                    Application submitted
+                                </span>
+
+                                <p>
+                                    Your application has already been
+                                    submitted for this opportunity.
+                                </p>
+
+                                <a
+                                    href="applications.html"
+                                    class="btn btn-secondary btn-block">
+
+                                    View my applications
+
+                                </a>
+
+                            </div>
+
+                            <div
+                                id="not-available"
+                                class="detail-applied-message"
+                                hidden>
+
+                                <p>
+                                    This opportunity is not currently
+                                    accepting applications.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Organization information -->
+                        <div class="detail-side-panel">
+
+                            <p class="detail-label">
+                                Organization
+                            </p>
+
+                            <h3 id="organization-name">
+                                —
+                            </h3>
+
+                            <p id="organization-description">
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Closing CTA -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-callout">
+
+                    <p class="eyebrow">
+                        VolunteerPortal
+                    </p>
+
+                    <h2>
+                        Every contribution<br>
+                        starts with one decision.
+                    </h2>
+
+                    <a
+                        href="opportunities.html"
+                        class="text-link">
+
+                        Explore more opportunities
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/opportunity-details.js"></script>
+
+</body>
+</html>

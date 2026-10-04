@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Volunteer Applications | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Organization management
+                        </p>
+
+                        <h1>
+                            Volunteer<br>
+                            applications.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Review volunteers who have applied to your
+                            opportunities and move applications through
+                            the participation process.
+                        </p>
+
+                        <a
+                            href="organization-dashboard.html"
+                            class="text-link">
+
+                            Back to dashboard
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Applications -->
+        <section class="section organization-applications-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Review and respond
+                        </p>
+
+                        <h2>
+                            Incoming applications
+                        </h2>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Review applicant information and update
+                        application status as decisions are made.
+                    </p>
+
+                </div>
+
+                <!-- Status overview -->
+                <div class="process-summary">
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Pending
+                            </strong>
+
+                            <p>
+                                Applications awaiting review.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Approved
+                            </strong>
+
+                            <p>
+                                Volunteers accepted for participation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Completed
+                            </strong>
+
+                            <p>
+                                Successfully completed participation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Loading -->
+                <p class="meta-label" id="application-count" aria-live="polite"></p>
+                <div
+                    id="applications-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading applications...
+                    </p>
+
+                </div>
+
+                <!-- Error -->
+                <div
+                    id="applications-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load applications
+                        </h3>
+
+                        <p id="applications-error-message">
+                            We couldn't retrieve volunteer applications
+                            right now.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="applications-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Empty -->
+                <div
+                    id="applications-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No applications yet
+                        </h3>
+
+                        <p>
+                            Applications submitted by volunteers
+                            will appear here.
+                        </p>
+
+                        <a
+                            href="organization-opportunities.html"
+                            class="btn btn-primary">
+
+                            Manage opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Application list -->
+                <div
+                    id="organization-applications-list"
+                    class="application-list organization-application-list"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Decision guidance -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Review process
+                        </p>
+
+                        <h2>
+                            Make every<br>
+                            application count.
+                        </h2>
+
+                    </div>
+
+                    <div class="process-list">
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Review
+                                </h3>
+
+                                <p>
+                                    Consider the volunteer's application
+                                    and the requirements of the opportunity.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Respond
+                                </h3>
+
+                                <p>
+                                    Approve or reject the application
+                                    based on your organization's needs.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Complete
+                                </h3>
+
+                                <p>
+                                    Mark approved participation as completed
+                                    after the volunteering activity.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/organization-applications.js"></script>
+
+</body>
+</html>

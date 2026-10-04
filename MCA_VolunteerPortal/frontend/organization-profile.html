@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Organization Profile | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Organization profile
+                        </p>
+
+                        <h1>
+                            Tell your<br>
+                            story.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Keep your organization's information
+                            clear and up to date so volunteers know
+                            who they are working with.
+                        </p>
+
+                        <a
+                            href="organization-dashboard.html"
+                            class="text-link">
+
+                            Back to dashboard
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div id="profile-loading" class="loading-state">
+                    <div class="loading-indicator"></div>
+                    <p>Loading organization profile...</p>
+                </div>
+                <div id="profile-error" class="error-state" style="display:none">
+                    <div class="state-number">01</div>
+                    <div>
+                        <h3>Unable to load profile</h3>
+                        <p id="profile-error-message">We couldn't retrieve your organization profile right now.</p>
+                        <button type="button" id="retry-profile" class="btn btn-primary">Try again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="profile-content">
+        <!-- Profile editor -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Organization information
+                        </p>
+
+                        <h2>
+                            Build trust<br>
+                            through clarity.
+                        </h2>
+
+                        <p class="section-header-copy">
+                            Provide accurate information about your
+                            organization and the work you do.
+                        </p>
+
+                        <div class="profile-status-panel">
+
+                            <span class="detail-label">
+                                Verification status
+                            </span>
+
+                            <span
+                                id="verification-status"
+                                class="status-badge">
+                                Pending
+                            </span>
+
+                            <p id="verification-note">
+                            Current status:
+                            <strong id="verification-note-status">Pending</strong>.
+                            It can only be changed through the
+                            administration process.
+                        </p>
+                        <div class="profile-summary-details">
+                            <div><span>Organization</span><strong id="summary-name">—</strong></div>
+                            <div><span>Contact</span><strong id="summary-email">—</strong></div>
+                            <div><span>Verification</span><strong id="summary-verification">—</strong></div>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-panel">
+
+                        <div
+                            id="form-message"
+                            class="form-message"
+                            hidden>
+                        </div>
+
+                        <form
+                            id="organization-profile-form"
+                            novalidate>
+
+                            <div class="form-group">
+
+                                <label for="organization-name">
+                                    Organization name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="organization-name"
+                                    name="organizationName"
+                                    placeholder="Enter organization name"
+                                    required
+                                >
+
+                                <small
+                                    id="organizationName-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="description">
+                                    About your organization
+                                </label>
+
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    rows="7"
+                                    placeholder="Describe your organization, mission, and the work you do...">
+                                </textarea>
+
+                                <small
+                                    id="description-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="address">
+                                    Address
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Enter organization address"
+                                >
+
+                                <small
+                                    id="address-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="contact-email">
+                                    Contact email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="contactEmail"
+                                    placeholder="contact@example.com"
+                                >
+
+                                <small
+                                    id="contactEmail-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="website">
+                                    Website
+                                    <span class="form-optional">
+                                        Optional
+                                    </span>
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="website"
+                                    name="website"
+                                    placeholder="https://example.com"
+                                >
+
+                                <small
+                                    id="website-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+                            <div class="form-actions">
+
+                                <a
+                                    href="organization-dashboard.html"
+                                    class="btn btn-secondary">
+
+                                    Cancel
+
+                                </a>
+
+                                <button
+                                    type="submit"
+                                    id="save-profile"
+                                    class="btn btn-primary">
+
+                                    <span class="button-text">
+                                        Save profile
+                                    </span>
+
+                                    <span
+                                        class="button-loading"
+                                        hidden>
+                                        Saving...
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        </div>
+        <!-- Profile guidance -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Profile principles
+                        </p>
+
+                        <h2>
+                            Give volunteers<br>
+                            confidence.
+                        </h2>
+
+                    </div>
+
+                    <div class="process-list">
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Be clear
+                                </h3>
+
+                                <p>
+                                    Explain your organization's purpose
+                                    and the type of work volunteers can
+                                    expect.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Stay current
+                                </h3>
+
+                                <p>
+                                    Keep contact information and
+                                    organization details up to date.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Verification
+                                </h3>
+
+                                <p>
+                                    Verification is controlled by the
+                                    administration process and cannot
+                                    be changed from this profile.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/organization-profile.js"></script>
+
+</body>
+</html>

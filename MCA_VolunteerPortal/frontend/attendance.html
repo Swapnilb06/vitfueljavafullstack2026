@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Organization management
+                        </p>
+
+                        <h1>
+                            Track<br>
+                            attendance.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Record volunteer participation for approved
+                            applications and keep an accurate history
+                            of attendance.
+                        </p>
+
+                        <a
+                            href="organization-dashboard.html"
+                            class="text-link">
+
+                            Back to dashboard
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Attendance workspace -->
+        <section class="section attendance-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Participation records
+                        </p>
+
+                        <h2>
+                            Volunteer attendance
+                        </h2>
+                        <p class="meta-label" id="attendance-count" aria-live="polite"></p>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Mark approved volunteers as present or absent
+                        for their assigned opportunities.
+                    </p>
+
+                </div>
+
+                <!-- Attendance information -->
+                <div class="process-summary">
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Approved
+                            </strong>
+
+                            <p>
+                                Only approved applications can
+                                receive attendance records.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Present
+                            </strong>
+
+                            <p>
+                                Record volunteers who participated
+                                in the activity.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="process-summary-item">
+
+                        <span class="process-summary-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Absent
+                            </strong>
+
+                            <p>
+                                Record approved volunteers who
+                                did not attend.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Loading -->
+                <div
+                    id="attendance-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading attendance records...
+                    </p>
+
+                </div>
+
+                <!-- Error -->
+                <div
+                    id="attendance-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load attendance
+                        </h3>
+
+                        <p id="attendance-error-message">
+                            We couldn't retrieve the attendance
+                            records right now.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="attendance-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Empty -->
+                <div
+                    id="attendance-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No attendance records yet
+                        </h3>
+
+                        <p>
+                            Approved volunteer applications will
+                            appear here when they are available
+                            for attendance tracking.
+                        </p>
+
+                        <a
+                            href="organization-applications.html"
+                            class="btn btn-primary">
+
+                            Review applications
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Attendance list -->
+                <div
+                    id="attendance-list"
+                    class="attendance-list"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Attendance guidance -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Participation matters
+                        </p>
+
+                        <h2>
+                            Keep the record<br>
+                            accurate.
+                        </h2>
+
+                    </div>
+
+                    <div class="process-list">
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Verify participation
+                                </h3>
+
+                                <p>
+                                    Check that the volunteer's
+                                    application is approved before
+                                    recording attendance.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Record accurately
+                                </h3>
+
+                                <p>
+                                    Mark attendance according to
+                                    actual participation.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Use the record
+                                </h3>
+
+                                <p>
+                                    Attendance can support completion
+                                    tracking and future recognition.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/attendance.js"></script>
+
+</body>
+</html>

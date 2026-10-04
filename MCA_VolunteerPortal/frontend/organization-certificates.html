@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificates | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Organization recognition
+                        </p>
+
+                        <h1>
+                            Issue<br>
+                            certificates.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Recognize completed volunteer participation
+                            by issuing certificates and maintaining a
+                            clear record of achievements.
+                        </p>
+
+                        <a
+                            href="organization-dashboard.html"
+                            class="text-link">
+
+                            Back to dashboard
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Issue certificate -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            New certificate
+                        </p>
+
+                        <h2>
+                            Recognize<br>
+                            participation.
+                        </h2>
+
+                        <p class="section-header-copy">
+                            Create a certificate record for a volunteer
+                            who has completed an opportunity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-panel">
+
+                        <div
+                            id="certificate-form-error"
+                            class="form-message form-message-error"
+                            role="alert"
+                            hidden>
+                        </div>
+
+
+                        <div
+                            id="certificate-form-success"
+                            class="form-message form-message-success"
+                            role="status"
+                            hidden>
+                        </div>
+
+
+                        <form
+                            id="certificate-form"
+                            novalidate>
+
+                            <!-- Volunteer -->
+                            <div class="form-group">
+
+                                <label for="volunteerId">
+                                    Volunteer ID
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="volunteerId"
+                                    name="volunteerId"
+                                    min="1"
+                                    placeholder="Enter volunteer ID"
+                                    required
+                                >
+
+                                <small
+                                    id="volunteerId-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+
+                            <!-- Opportunity -->
+                            <div class="form-group">
+
+                                <label for="opportunityId">
+                                    Opportunity ID
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="opportunityId"
+                                    name="opportunityId"
+                                    min="1"
+                                    placeholder="Enter opportunity ID"
+                                    required
+                                >
+
+                                <small
+                                    id="opportunityId-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+
+                            <!-- Certificate number -->
+                            <div class="form-group">
+
+                                <label for="certificateNumber">
+                                    Certificate number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="certificateNumber"
+                                    name="certificateNumber"
+                                    placeholder="e.g. VP-2026-0001"
+                                    required
+                                >
+
+                                <small
+                                    id="certificateNumber-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+
+                            <!-- Issue date -->
+                            <div class="form-group">
+
+                                <label for="issueDate">
+                                    Issue date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="issueDate"
+                                    name="issueDate"
+                                    required
+                                >
+
+                                <small
+                                    id="issueDate-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+
+                            <!-- Optional external URL -->
+                            <div class="form-group">
+
+                                <label for="certificateUrl">
+
+                                    Certificate URL
+
+                                    <span class="form-optional">
+                                        Optional
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="certificateUrl"
+                                    name="certificateUrl"
+                                    placeholder="https://..."
+                                >
+
+                                <small
+                                    id="certificateUrl-error"
+                                    class="field-error">
+                                </small>
+
+                            </div>
+
+
+                            <!-- Form actions -->
+                            <div class="form-actions">
+
+                                <button
+                                    type="reset"
+                                    id="reset-certificate-form"
+                                    class="btn btn-secondary">
+
+                                    Clear
+
+                                </button>
+
+
+                                <button
+                                    type="submit"
+                                    id="create-certificate-button"
+                                    class="btn btn-primary">
+
+                                    <span class="button-text">
+                                        Issue certificate
+                                    </span>
+
+                                    <span
+                                        class="button-loading"
+                                        hidden>
+                                        Issuing...
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Certificate records -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Certificate records
+                        </p>
+
+                        <h2>
+                            Issued certificates
+                        </h2>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Review certificates created by your organization.
+                    </p>
+
+                </div>
+
+
+                <p
+                    class="meta-label"
+                    id="certificate-count"
+                    aria-live="polite">
+                </p>
+
+
+                <!-- Loading -->
+                <div
+                    id="certificates-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading certificates...
+                    </p>
+
+                </div>
+
+
+                <!-- Error -->
+                <div
+                    id="certificates-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load certificates
+                        </h3>
+
+                        <p id="certificates-error-message">
+                            We couldn't retrieve your certificate
+                            records right now.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="certificates-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Empty -->
+                <div
+                    id="certificates-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No certificates issued yet
+                        </h3>
+
+                        <p>
+                            Certificates you issue will appear
+                            in this archive.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Certificate list -->
+                <div
+                    id="certificates-list"
+                    class="certificate-grid"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recognition guidance -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="editorial-callout">
+
+                    <p class="eyebrow">
+                        Volunteer recognition
+                    </p>
+
+                    <h2>
+                        A completed contribution<br>
+                        deserves recognition.
+                    </h2>
+
+                    <p>
+                        Keep certificate numbers unique and associate
+                        each certificate with the correct volunteer
+                        and opportunity.
+                    </p>
+
+                    <a
+                        href="attendance.html"
+                        class="text-link">
+
+                        Review attendance
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="site-footer"></div>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/organization-certificates.js"></script>
+
+</body>
+</html>

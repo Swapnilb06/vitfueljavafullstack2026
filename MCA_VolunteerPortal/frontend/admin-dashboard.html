@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="VolunteerPortal administration dashboard for managing users, organizations, opportunities, and platform activity."
+>
+
+<title>Admin Dashboard — VolunteerPortal</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body class="admin-page">
+
+<!-- Shared navigation -->
+<div id="site-header"></div>
+
+<main>
+
+    <!-- =========================================================
+         ADMIN HERO
+    ========================================================== -->
+    <section class="page-hero section-dark">
+        <div class="container">
+
+            <div class="page-hero-meta">
+                <span>ADMINISTRATION</span>
+                <span>VOLUNTEERPORTAL / CONTROL CENTER</span>
+            </div>
+
+            <div class="page-hero-content">
+
+                <div>
+                    <p class="eyebrow eyebrow-light">
+                        PLATFORM ADMINISTRATION
+                    </p>
+
+                    <h1>
+                        Keep the platform
+                        connected.
+                    </h1>
+                </div>
+
+                <div class="page-hero-side">
+                    <p>
+                        Manage platform activity, review organizations,
+                        monitor opportunities, and maintain a reliable
+                        volunteer community.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-hero-footer">
+                <span>ADMIN / 01</span>
+                <span>PLATFORM CONTROL</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         DASHBOARD CONTENT
+    ========================================================== -->
+    <section class="dashboard-section section-light">
+        <div class="container">
+
+            <!-- Welcome -->
+            <div class="dashboard-intro">
+
+                <div>
+                    <span class="section-label">
+                        ADMIN DASHBOARD
+                    </span>
+
+                    <h2 class="display-heading display-heading-medium">
+                        Platform overview.
+                    </h2>
+                </div>
+
+                <div class="dashboard-intro-copy">
+                    <p>
+                        Use the administration area to oversee users,
+                        organizations, opportunities, applications,
+                        and verification activity.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+            <div class="dashboard-stats">
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        01
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        USERS
+                    </span>
+
+                    <strong
+                        id="admin-users-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Registered platform users
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        02
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        ORGANIZATIONS
+                    </span>
+
+                    <strong
+                        id="admin-organizations-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Organizations using the platform
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        03
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        OPPORTUNITIES
+                    </span>
+
+                    <strong
+                        id="admin-opportunities-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Volunteer opportunities
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        04
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        APPLICATIONS
+                    </span>
+
+                    <strong
+                        id="admin-applications-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Volunteer applications
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 ADMIN ACTIONS
+            ================================================== -->
+            <div class="dashboard-content-grid">
+
+                <section class="dashboard-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="section-label">
+                                MANAGEMENT
+                            </span>
+
+                            <h3>
+                                Platform controls
+                            </h3>
+                        </div>
+
+                        <span class="panel-index">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-action-list">
+
+                        <a
+                            href="admin-users.html"
+                            class="admin-action-card"
+                        >
+
+                            <div class="admin-action-number">
+                                01
+                            </div>
+
+                            <div class="admin-action-content">
+
+                                <span class="eyebrow">
+                                    USERS
+                                </span>
+
+                                <h4>
+                                    Manage users
+                                </h4>
+
+                                <p>
+                                    Review registered volunteers and
+                                    organizations and manage platform
+                                    accounts.
+                                </p>
+
+                            </div>
+
+                            <span
+                                class="circle-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="admin-organizations.html"
+                            class="admin-action-card"
+                        >
+
+                            <div class="admin-action-number">
+                                02
+                            </div>
+
+                            <div class="admin-action-content">
+
+                                <span class="eyebrow">
+                                    VERIFICATION
+                                </span>
+
+                                <h4>
+                                    Review organizations
+                                </h4>
+
+                                <p>
+                                    Review organization profiles and
+                                    verification requests before they
+                                    become fully trusted on the platform.
+                                </p>
+
+                            </div>
+
+                            <span
+                                class="circle-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="admin-opportunities.html"
+                            class="admin-action-card"
+                        >
+
+                            <div class="admin-action-number">
+                                03
+                            </div>
+
+                            <div class="admin-action-content">
+
+                                <span class="eyebrow">
+                                    OPPORTUNITIES
+                                </span>
+
+                                <h4>
+                                    Review opportunities
+                                </h4>
+
+                                <p>
+                                    Monitor volunteer opportunities and
+                                    maintain appropriate platform content.
+                                </p>
+
+                            </div>
+
+                            <span
+                                class="circle-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="admin-applications.html"
+                            class="admin-action-card"
+                        >
+
+                            <div class="admin-action-number">
+                                04
+                            </div>
+
+                            <div class="admin-action-content">
+
+                                <span class="eyebrow">
+                                    ACTIVITY
+                                </span>
+
+                                <h4>
+                                    Monitor applications
+                                </h4>
+
+                                <p>
+                                    Review application activity across the
+                                    volunteer platform.
+                                </p>
+
+                            </div>
+
+                            <span
+                                class="circle-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     VERIFICATION PANEL
+                ================================================== -->
+                <aside class="dashboard-panel dashboard-panel-dark">
+
+                    <div class="panel-heading panel-heading-light">
+
+                        <div>
+                            <span class="section-label">
+                                VERIFICATION
+                            </span>
+
+                            <h3>
+                                Organization review
+                            </h3>
+                        </div>
+
+                        <span class="panel-index">
+                            02
+                        </span>
+
+                    </div>
+
+                    <div class="admin-verification-content">
+
+                        <div class="admin-verification-number">
+                            <span id="admin-pending-organizations">
+                                —
+                            </span>
+                        </div>
+
+                        <h4>
+                            Pending organizations
+                        </h4>
+
+                        <p>
+                            Organizations can register on the platform,
+                            but verification should remain an
+                            administrator-controlled process.
+                        </p>
+
+                        <a
+                            href="admin-organizations.html"
+                            class="btn btn-accent"
+                        >
+                            Review organizations
+                            <span
+                                class="btn-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+            <section class="dashboard-panel admin-activity-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-label">
+                            PLATFORM ACTIVITY
+                        </span>
+
+                        <h3>
+                            Recent activity
+                        </h3>
+                    </div>
+
+                    <span class="panel-index">
+                        03
+                    </span>
+
+                </div>
+
+                <div
+                    id="admin-recent-activity"
+                    class="admin-activity-list"
+                    aria-live="polite"
+                >
+
+                    <div class="ui-loading">
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOADING / ERROR
+            ================================================== -->
+            <div
+                id="admin-dashboard-loading"
+                class="page-state"
+                hidden
+            >
+                <div class="ui-loading">
+                    <span class="loading-line"></span>
+                    <span class="loading-line"></span>
+                    <span class="loading-line"></span>
+                </div>
+
+                <p>
+                    Loading administration data...
+                </p>
+            </div>
+
+
+            <div
+                id="admin-dashboard-error"
+                class="page-state page-state-error"
+                hidden
+            >
+                <span class="section-label">
+                    UNABLE TO LOAD
+                </span>
+
+                <h3>
+                    Administration data could not be loaded.
+                </h3>
+
+                <p id="admin-dashboard-error-message">
+                    Please try again.
+                </p>
+
+                <button
+                    id="retry-admin-dashboard"
+                    type="button"
+                    class="btn btn-dark"
+                >
+                    Retry
+                    <span
+                        class="btn-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         ADMIN PRINCIPLES
+    ========================================================== -->
+    <section class="section-offwhite admin-principles">
+
+        <div class="container">
+
+            <div class="section-label-row">
+                <span class="section-index">
+                    04
+                </span>
+
+                <span class="section-label">
+                    ADMINISTRATION PRINCIPLES
+                </span>
+            </div>
+
+            <div class="editorial-list">
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        01
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Verify responsibly
+                        </h3>
+
+                        <p>
+                            Organization verification should be handled
+                            through the administrator workflow rather than
+                            allowing organizations to verify themselves.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        02
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Protect platform access
+                        </h3>
+
+                        <p>
+                            Administrative actions should remain
+                            restricted to authenticated administrator
+                            accounts.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        03
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Maintain reliable records
+                        </h3>
+
+                        <p>
+                            Users, opportunities, applications,
+                            attendance, and certificates should remain
+                            consistent and traceable throughout the
+                            platform.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
+    <section class="section-dark admin-final-cta">
+
+        <div class="container">
+
+            <div class="final-cta-grid">
+
+                <div>
+
+                    <span class="section-index">
+                        05
+                    </span>
+
+                    <p class="eyebrow eyebrow-light">
+                        PLATFORM OVERSIGHT
+                    </p>
+
+                    <h2 class="display-heading display-heading-light">
+                        Keep every
+                        connection moving.
+                    </h2>
+
+                </div>
+
+                <div class="final-cta-action">
+
+                    <p>
+                        Use the administration tools to maintain a
+                        trustworthy and organized volunteer ecosystem.
+                    </p>
+
+                    <a
+                        href="admin-organizations.html"
+                        class="btn btn-accent btn-large"
+                    >
+                        Review organizations
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Shared footer -->
+<div id="site-footer"></div>
+
+
+<!-- Scripts -->
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

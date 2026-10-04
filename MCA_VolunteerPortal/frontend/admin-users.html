@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Manage VolunteerPortal users and platform accounts."
+>
+
+<title>User Management — VolunteerPortal</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body class="admin-page">
+
+<div id="site-header"></div>
+
+<main>
+
+    <!-- =========================================================
+         PAGE HERO
+    ========================================================== -->
+    <section class="page-hero section-dark">
+
+        <div class="container">
+
+            <div class="page-hero-meta">
+                <span>ADMINISTRATION</span>
+                <span>USER MANAGEMENT</span>
+            </div>
+
+            <div class="page-hero-content">
+
+                <div>
+                    <p class="eyebrow eyebrow-light">
+                        PLATFORM ACCOUNTS
+                    </p>
+
+                    <h1>
+                        Manage the
+                        community.
+                    </h1>
+                </div>
+
+                <div class="page-hero-side">
+                    <p>
+                        Review registered accounts and maintain a clear
+                        view of volunteers, organizations, and authorized
+                        administrators.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-hero-footer">
+                <span>ADMIN / 03</span>
+                <span>USERS</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         USER MANAGEMENT
+    ========================================================== -->
+    <section class="section-light admin-management-section">
+
+        <div class="container">
+
+            <div class="dashboard-intro">
+
+                <div>
+                    <span class="section-label">
+                        ACCOUNT MANAGEMENT
+                    </span>
+
+                    <h2 class="display-heading display-heading-medium">
+                        Registered users.
+                    </h2>
+                </div>
+
+                <div class="dashboard-intro-copy">
+                    <p>
+                        Search and review platform accounts while keeping
+                        authentication credentials protected from the
+                        administration interface.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SUMMARY STATS
+            ================================================== -->
+            <div class="dashboard-stats">
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        01
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        TOTAL USERS
+                    </span>
+
+                    <strong
+                        id="admin-users-total"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Registered accounts
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        02
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        VOLUNTEERS
+                    </span>
+
+                    <strong
+                        id="admin-volunteers-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Volunteer accounts
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        03
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        ORGANIZATIONS
+                    </span>
+
+                    <strong
+                        id="admin-organization-users-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Organization accounts
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        04
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        ADMINS
+                    </span>
+
+                    <strong
+                        id="admin-admins-count"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Administrator accounts
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+            <div class="filter-panel">
+
+                <div class="filter-panel-header">
+
+                    <div>
+                        <span class="section-label">
+                            FILTER
+                        </span>
+
+                        <h3>
+                            User accounts
+                        </h3>
+                    </div>
+
+                    <button
+                        id="clear-user-filters"
+                        type="button"
+                        class="text-button"
+                    >
+                        Clear filters
+                    </button>
+
+                </div>
+
+
+                <div class="filter-grid">
+
+                    <div class="form-group">
+
+                        <label for="user-search">
+                            Search
+                        </label>
+
+                        <input
+                            id="user-search"
+                            name="user-search"
+                            type="search"
+                            placeholder="Search by name or email"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="user-role-filter">
+                            Role
+                        </label>
+
+                        <select
+                            id="user-role-filter"
+                            name="user-role-filter"
+                        >
+
+                            <option value="">
+                                All roles
+                            </option>
+
+                            <option value="VOLUNTEER">
+                                Volunteer
+                            </option>
+
+                            <option value="ORGANIZATION">
+                                Organization
+                            </option>
+
+                            <option value="ADMIN">
+                                Administrator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 USER LIST
+            ================================================== -->
+            <section class="dashboard-panel admin-management-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-label">
+                            USERS
+                        </span>
+
+                        <h3>
+                            Registered accounts
+                        </h3>
+                    </div>
+
+                    <span
+                        id="user-result-count"
+                        class="panel-index"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="admin-users-loading"
+                    class="page-state"
+                >
+
+                    <div class="ui-loading">
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                    </div>
+
+                    <p>
+                        Loading users...
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="admin-users-error"
+                    class="page-state page-state-error"
+                    hidden
+                >
+
+                    <span class="section-label">
+                        UNABLE TO LOAD
+                    </span>
+
+                    <h3>
+                        Users could not be loaded.
+                    </h3>
+
+                    <p id="admin-users-error-message">
+                        Please try again.
+                    </p>
+
+                    <button
+                        id="retry-admin-users"
+                        type="button"
+                        class="btn btn-dark"
+                    >
+                        Retry
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="admin-users-empty"
+                    class="page-state"
+                    hidden
+                >
+
+                    <span class="section-label">
+                        NO RESULTS
+                    </span>
+
+                    <h3>
+                        No users found.
+                    </h3>
+
+                    <p>
+                        No accounts match the current search or filter.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="admin-users-list"
+                    class="admin-user-list"
+                    aria-live="polite"
+                ></div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SECURITY GUIDANCE
+    ========================================================== -->
+    <section class="section-offwhite">
+
+        <div class="container">
+
+            <div class="section-label-row">
+                <span class="section-index">
+                    03
+                </span>
+
+                <span class="section-label">
+                    ACCOUNT SECURITY
+                </span>
+            </div>
+
+            <div class="editorial-list">
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        01
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Credentials stay protected
+                        </h3>
+
+                        <p>
+                            Passwords must never be displayed in the
+                            administration interface. Authentication
+                            credentials remain protected by the backend.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        02
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Roles control access
+                        </h3>
+
+                        <p>
+                            Volunteer, organization, and administrator
+                            accounts receive different permissions based
+                            on their authenticated role.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        03
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Administrative access stays restricted
+                        </h3>
+
+                        <p>
+                            Administrator accounts are not created through
+                            public registration and administrative API
+                            operations require the appropriate role.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
+    <section class="section-dark">
+
+        <div class="container">
+
+            <div class="final-cta-grid">
+
+                <div>
+
+                    <span class="section-index">
+                        04
+                    </span>
+
+                    <p class="eyebrow eyebrow-light">
+                        ADMINISTRATION
+                    </p>
+
+                    <h2 class="display-heading display-heading-light">
+                        Keep the community
+                        organized.
+                    </h2>
+
+                </div>
+
+                <div class="final-cta-action">
+
+                    <p>
+                        Return to the administration dashboard to review
+                        organization verification and platform activity.
+                    </p>
+
+                    <a
+                        href="admin-dashboard.html"
+                        class="btn btn-accent btn-large"
+                    >
+                        Back to dashboard
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="site-footer"></div>
+
+
+<!-- Scripts -->
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/admin-users.js"></script>
+
+</body>
+</html>

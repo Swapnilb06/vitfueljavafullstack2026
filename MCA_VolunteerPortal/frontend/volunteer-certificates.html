@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Certificates | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Recognition
+                        </p>
+
+                        <h1>
+                            My<br>
+                            certificates.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Keep a record of the certificates you've
+                            received for your completed volunteering
+                            activities.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="text-link">
+
+                            Find another opportunity
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Certificates -->
+        <section class="section certificates-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Your recognition
+                        </p>
+
+                        <h2>
+                            Certificate archive
+                        </h2>
+                        <p class="meta-label" id="certificate-count" aria-live="polite"></p>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Certificates issued to you through
+                        VolunteerPortal.
+                    </p>
+
+                </div>
+
+                <!-- Loading -->
+                <div
+                    id="certificates-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading certificates...
+                    </p>
+
+                </div>
+
+                <!-- Error -->
+                <div
+                    id="certificates-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load certificates
+                        </h3>
+
+                        <p id="certificates-error-message">
+                            We couldn't retrieve your certificates
+                            right now.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="certificates-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Empty -->
+                <div
+                    id="certificates-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No certificates yet
+                        </h3>
+
+                        <p>
+                            Certificates issued for completed
+                            volunteering activities will appear here.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-primary">
+
+                            Explore opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Certificate list -->
+                <div
+                    id="certificates-list"
+                    class="certificate-grid"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Recognition statement -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-callout">
+
+                    <p class="eyebrow">
+                        Your contribution
+                    </p>
+
+                    <h2>
+                        Recognition follows<br>
+                        meaningful action.
+                    </h2>
+
+                    <p>
+                        Complete volunteer activities, build your
+                        experience, and keep your achievements
+                        organized in one place.
+                    </p>
+
+                    <a
+                        href="applications.html"
+                        class="text-link">
+
+                        View my applications
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/volunteer-certificates.js"></script>
+
+</body>
+</html>

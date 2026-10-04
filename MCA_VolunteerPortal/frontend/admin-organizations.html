@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Review and verify organizations registered on VolunteerPortal."
+>
+
+<title>Organization Verification — VolunteerPortal</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body class="admin-page">
+
+<div id="site-header"></div>
+
+<main>
+
+    <!-- =========================================================
+         PAGE HERO
+    ========================================================== -->
+    <section class="page-hero section-dark">
+        <div class="container">
+
+            <div class="page-hero-meta">
+                <span>ADMINISTRATION</span>
+                <span>ORGANIZATION VERIFICATION</span>
+            </div>
+
+            <div class="page-hero-content">
+
+                <div>
+                    <p class="eyebrow eyebrow-light">
+                        PLATFORM TRUST
+                    </p>
+
+                    <h1>
+                        Review the
+                        organizations.
+                    </h1>
+                </div>
+
+                <div class="page-hero-side">
+                    <p>
+                        Review organization information and control
+                        verification status before organizations receive
+                        verified platform status.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="page-hero-footer">
+                <span>ADMIN / 02</span>
+                <span>VERIFICATION</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SUMMARY
+    ========================================================== -->
+    <section class="section-light admin-management-section">
+
+        <div class="container">
+
+            <div class="dashboard-intro">
+
+                <div>
+                    <span class="section-label">
+                        ORGANIZATION REVIEW
+                    </span>
+
+                    <h2 class="display-heading display-heading-medium">
+                        Verification queue.
+                    </h2>
+                </div>
+
+                <div class="dashboard-intro-copy">
+                    <p>
+                        Review organization profiles, inspect their
+                        submitted information, and update verification
+                        status through the administrator workflow.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SUMMARY STATS
+            ================================================== -->
+            <div class="dashboard-stats">
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        01
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        TOTAL
+                    </span>
+
+                    <strong
+                        id="admin-organizations-total"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Registered organizations
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        02
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        PENDING
+                    </span>
+
+                    <strong
+                        id="admin-organizations-pending"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Awaiting review
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        03
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        VERIFIED
+                    </span>
+
+                    <strong
+                        id="admin-organizations-verified"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Verified organizations
+                    </span>
+
+                </article>
+
+
+                <article class="dashboard-stat-card">
+
+                    <span class="dashboard-stat-index">
+                        04
+                    </span>
+
+                    <span class="dashboard-stat-label">
+                        REJECTED
+                    </span>
+
+                    <strong
+                        id="admin-organizations-rejected"
+                        class="dashboard-stat-value"
+                    >
+                        —
+                    </strong>
+
+                    <span>
+                        Rejected organizations
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+            <div class="filter-panel">
+
+                <div class="filter-panel-header">
+
+                    <div>
+                        <span class="section-label">
+                            FILTER
+                        </span>
+
+                        <h3>
+                            Organization status
+                        </h3>
+                    </div>
+
+                    <button
+                        id="clear-organization-filters"
+                        type="button"
+                        class="text-button"
+                    >
+                        Clear filters
+                    </button>
+
+                </div>
+
+
+                <div class="filter-grid">
+
+                    <div class="form-group">
+
+                        <label for="organization-search">
+                            Search
+                        </label>
+
+                        <input
+                            id="organization-search"
+                            name="organization-search"
+                            type="search"
+                            placeholder="Search organization name or email"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="organization-status-filter">
+                            Verification status
+                        </label>
+
+                        <select
+                            id="organization-status-filter"
+                            name="organization-status-filter"
+                        >
+                            <option value="">
+                                All statuses
+                            </option>
+
+                            <option value="PENDING">
+                                Pending
+                            </option>
+
+                            <option value="VERIFIED">
+                                Verified
+                            </option>
+
+                            <option value="REJECTED">
+                                Rejected
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ORGANIZATION LIST
+            ================================================== -->
+            <section class="dashboard-panel admin-management-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-label">
+                            ORGANIZATIONS
+                        </span>
+
+                        <h3>
+                            Registered organizations
+                        </h3>
+                    </div>
+
+                    <span
+                        id="organization-result-count"
+                        class="panel-index"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="admin-organizations-loading"
+                    class="page-state"
+                >
+
+                    <div class="ui-loading">
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                        <span class="loading-line"></span>
+                    </div>
+
+                    <p>
+                        Loading organizations...
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="admin-organizations-error"
+                    class="page-state page-state-error"
+                    hidden
+                >
+
+                    <span class="section-label">
+                        UNABLE TO LOAD
+                    </span>
+
+                    <h3>
+                        Organizations could not be loaded.
+                    </h3>
+
+                    <p id="admin-organizations-error-message">
+                        Please try again.
+                    </p>
+
+                    <button
+                        id="retry-admin-organizations"
+                        type="button"
+                        class="btn btn-dark"
+                    >
+                        Retry
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="admin-organizations-empty"
+                    class="page-state"
+                    hidden
+                >
+
+                    <span class="section-label">
+                        NO RESULTS
+                    </span>
+
+                    <h3>
+                        No organizations found.
+                    </h3>
+
+                    <p>
+                        No organizations match the current filters.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="admin-organizations-list"
+                    class="admin-organization-list"
+                    aria-live="polite"
+                ></div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         VERIFICATION PROCESS
+    ========================================================== -->
+    <section class="section-offwhite">
+
+        <div class="container">
+
+            <div class="section-label-row">
+                <span class="section-index">
+                    03
+                </span>
+
+                <span class="section-label">
+                    VERIFICATION PROCESS
+                </span>
+            </div>
+
+            <div class="editorial-list">
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        01
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Review
+                        </h3>
+
+                        <p>
+                            Inspect the organization's name, description,
+                            contact information, address, and other
+                            available profile information.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        02
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Verify or reject
+                        </h3>
+
+                        <p>
+                            Set the organization's verification status
+                            based on the information available to the
+                            administrator.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="editorial-row">
+
+                    <div class="editorial-number">
+                        03
+                    </div>
+
+                    <div class="editorial-main">
+
+                        <h3>
+                            Maintain trust
+                        </h3>
+
+                        <p>
+                            Keep organization verification under
+                            administrator control instead of allowing
+                            organizations to approve themselves.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
+    <section class="section-dark">
+
+        <div class="container">
+
+            <div class="final-cta-grid">
+
+                <div>
+
+                    <span class="section-index">
+                        04
+                    </span>
+
+                    <p class="eyebrow eyebrow-light">
+                        PLATFORM TRUST
+                    </p>
+
+                    <h2 class="display-heading display-heading-light">
+                        Keep organization
+                        verification clear.
+                    </h2>
+
+                </div>
+
+                <div class="final-cta-action">
+
+                    <p>
+                        Review each organization carefully and keep
+                        verification decisions controlled by authorized
+                        administrators.
+                    </p>
+
+                    <a
+                        href="admin-dashboard.html"
+                        class="btn btn-accent btn-large"
+                    >
+                        Back to dashboard
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="site-footer"></div>
+
+
+<!-- Scripts -->
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/admin-organizations.js"></script>
+
+</body>
+</html>

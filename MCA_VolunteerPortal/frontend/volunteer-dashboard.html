@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Volunteer Dashboard | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Dashboard hero -->
+        <section class="dashboard-hero">
+
+            <div class="container">
+
+                <div class="dashboard-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Volunteer dashboard
+                        </p>
+
+                        <h1>
+                            Make your<br>
+                            time matter.
+                        </h1>
+
+                        <p class="dashboard-intro">
+                            Welcome back,
+                            <strong id="volunteer-name">
+                                Volunteer
+                            </strong>.
+                            Here's an overview of your
+                            volunteering journey.
+                        </p>
+
+                    </div>
+
+                    <div class="dashboard-hero-action">
+
+                        <span class="dashboard-index">
+                            01
+                        </span>
+
+                        <p>
+                            Find your next opportunity and
+                            continue contributing to your community.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-dark">
+
+                            Explore opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Statistics -->
+        <section class="section dashboard-stats-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Your activity
+                        </p>
+
+                        <h2>
+                            At a glance
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span class="stat-number"
+                              id="application-count">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Applications
+                        </span>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <span class="stat-number"
+                              id="approved-count">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Approved
+                        </span>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <span class="stat-number"
+                              id="completed-count">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <span class="stat-number"
+                              id="certificate-count">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Certificates
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Quick actions -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Quick access
+                        </p>
+
+                        <h2>
+                            Keep moving forward.
+                        </h2>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Everything you need to manage your
+                        volunteering activity.
+                    </p>
+
+                </div>
+
+                <div class="dashboard-actions">
+
+                    <a
+                        href="opportunities.html"
+                        class="dashboard-action-card">
+
+                        <span class="action-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Explore opportunities
+                            </h3>
+
+                            <p>
+                                Find volunteer roles that match
+                                your interests and availability.
+                            </p>
+
+                        </div>
+
+                        <span
+                            class="action-arrow"
+                            aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="applications.html"
+                        class="dashboard-action-card">
+
+                        <span class="action-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                My applications
+                            </h3>
+
+                            <p>
+                                Review submitted applications and
+                                monitor their current status.
+                            </p>
+
+                        </div>
+
+                        <span
+                            class="action-arrow"
+                            aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="volunteer-certificates.html"
+                        class="dashboard-action-card">
+
+                        <span class="action-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                My certificates
+                            </h3>
+
+                            <p>
+                                Access certificates issued for
+                                completed volunteering activities.
+                            </p>
+
+                        </div>
+
+                        <span
+                            class="action-arrow"
+                            aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Recent applications -->
+        <section class="section dashboard-recent-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Recent activity
+                        </p>
+
+                        <h2>
+                            Your latest applications
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="applications.html"
+                        class="text-link">
+
+                        View all applications
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                </div>
+
+                <div
+                    id="dashboard-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading your activity...
+                    </p>
+
+                </div>
+
+                <div
+                    id="dashboard-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load dashboard data
+                        </h3>
+
+                        <p id="dashboard-error-message">
+                            We couldn't retrieve your latest activity.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="dashboard-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="dashboard-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Your journey starts here
+                        </h3>
+
+                        <p>
+                            You haven't submitted any applications yet.
+                            Explore available opportunities to get started.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-primary">
+
+                            Explore opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="recent-applications"
+                    class="application-list"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Closing statement -->
+        <section class="section section-accent">
+
+            <div class="container">
+
+                <div class="cta-editorial">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Keep contributing
+                        </p>
+
+                        <h2>
+                            Small actions.<br>
+                            Meaningful impact.
+                        </h2>
+
+                    </div>
+
+                    <div class="cta-editorial-action">
+
+                        <p>
+                            Every application is a step toward
+                            making your time count.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-dark">
+
+                            Find an opportunity
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/volunteer-dashboard.js"></script>
+
+</body>
+</html>

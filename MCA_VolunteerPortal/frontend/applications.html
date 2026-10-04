@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Applications | VolunteerPortal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Volunteer journey
+                        </p>
+
+                        <h1>
+                            My<br>
+                            applications.
+                        </h1>
+
+                    </div>
+
+                    <div class="page-hero-copy">
+
+                        <p>
+                            Keep track of the opportunities you've applied
+                            for and follow each application as it moves
+                            through the process.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="text-link">
+
+                            Find another opportunity
+                            <span aria-hidden="true">→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Applications -->
+        <section class="section applications-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Your activity
+                        </p>
+
+                        <h2>
+                            Application history
+                        </h2>
+                        <p class="meta-label" id="application-count" aria-live="polite"></p>
+
+                    </div>
+
+                    <p class="section-header-copy">
+                        Review your submitted applications and
+                        their current status.
+                    </p>
+
+                </div>
+
+                <!-- Loading -->
+                <div
+                    id="applications-loading"
+                    class="loading-state">
+
+                    <div class="loading-indicator"></div>
+
+                    <p>
+                        Loading applications...
+                    </p>
+
+                </div>
+
+                <!-- Error -->
+                <div
+                    id="applications-error"
+                    class="error-state"
+                    hidden>
+
+                    <div class="state-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Unable to load applications
+                        </h3>
+
+                        <p id="applications-error-message">
+                            We couldn't retrieve your application
+                            history right now.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="applications-retry"
+                            class="btn btn-primary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Empty -->
+                <div
+                    id="applications-empty"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="state-number">
+                        00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            No applications yet
+                        </h3>
+
+                        <p>
+                            You haven't applied for any opportunities.
+                            Start exploring and find somewhere to contribute.
+                        </p>
+
+                        <a
+                            href="opportunities.html"
+                            class="btn btn-primary">
+
+                            Explore opportunities
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Application list -->
+                <div
+                    id="applications-list"
+                    class="application-list"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Status explanation -->
+        <section class="section section-light">
+
+            <div class="container">
+
+                <div class="editorial-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            Application process
+                        </p>
+
+                        <h2>
+                            Know where<br>
+                            you stand.
+                        </h2>
+
+                    </div>
+
+                    <div class="process-list">
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Pending
+                                </h3>
+
+                                <p>
+                                    Your application has been submitted
+                                    and is waiting for the organization
+                                    to review it.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Approved
+                                </h3>
+
+                                <p>
+                                    The organization has accepted your
+                                    application and you can participate.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="process-item">
+
+                            <span class="process-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Completed
+                                </h3>
+
+                                <p>
+                                    Your volunteering activity has been
+                                    completed successfully.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/applications.js"></script>
+
+</body>
+</html>
